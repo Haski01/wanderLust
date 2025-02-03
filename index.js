@@ -2,7 +2,7 @@ if (process.env.NODE_ENV != "production") {
   require("dotenv").config();
 }
 
-const port = process.env.PORT;
+const port = 8080;
 
 const express = require("express");
 const app = express();
@@ -86,5 +86,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log("listening at port no: 8080");
+  console.log("listening at port no:", port);
 });
