@@ -2,6 +2,8 @@ if (process.env.NODE_ENV != "production") {
   require("dotenv").config();
 }
 
+const port = process.env.PORT;
+
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -83,6 +85,6 @@ app.use((err, req, res, next) => {
   res.status(status).render("rooms/error.ejs", { err });
 });
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log("listening at port no: 8080");
 });
