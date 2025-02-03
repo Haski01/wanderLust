@@ -1,0 +1,54 @@
+<%-include("../includes/boilerplate.ejs")%>
+
+<body>
+  <div class="tax-toggle ms-2">
+    <div class="form-check-reverse form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="flexSwitchCheckDefault"
+      />
+      <label class="form-check-label" for="flexSwitchCheckDefault"
+        >Display total before taxe</label
+      >
+    </div>
+  </div>
+
+  <div class="row">
+    <%for(let room of allRooms){%>
+
+    <div class="card row-cols-lg-s1" style="width: 22rem">
+      <a href="http://localhost:8080/rooms/<%=room._id%>">
+        <img
+          class="card-img-top"
+          style="height: 20rem"
+          src="<%=room.image.url%>"
+          alt="roomImage"
+        />
+        <div class="card-body">
+          <h5><b><%=room.title%></b></h5>
+          <h6>
+            &#x24; <%=room.price%>/night
+            <b><i class="tax-info">+18% GST= <%=room.price*18/100 %></i></b>
+          </h6>
+          <h6><%=room.country%></h6>
+        </div>
+      </a>
+    </div>
+    <%}%>
+  </div>
+</body>
+
+<script>
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for (info of taxInfo) {
+      if (info.style.display != "inline") {
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  });
+</script>

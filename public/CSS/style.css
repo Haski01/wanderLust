@@ -1,0 +1,111 @@
+.navbar {
+  padding: 1rem;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+.navbar-brand {
+  font-size: xx-large;
+  color: #ff5a5f !important;
+}
+
+.card {
+  margin: 10px !important;
+  margin-left: 15px !important;
+}
+
+.card-img-top {
+  border-radius: 20px;
+}
+
+.card:hover {
+  opacity: 0.7;
+}
+
+.card a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.image {
+  height: 20rem;
+}
+
+.img {
+  height: 10rem;
+}
+
+.show-card {
+  opacity: 1 !important;
+}
+
+.btn-primary a:link,
+a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+.btn-primary a:hover,
+a:active {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.form {
+  line-height: 35px;
+}
+
+.location {
+  flex: 1;
+}
+
+button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+button:hover {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.search-navbar {
+  display: flex;
+}
+
+.btn-search {
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  margin-left: -2px !important;
+  background-color: #ff5a5f !important;
+  color: white;
+}
+
+.search-input {
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
+
+.tax-toggle {
+  border: 1px solid black;
+  padding: 10px 15px !important;
+  border-radius: 10px;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.tax-info {
+  display: none;
+}

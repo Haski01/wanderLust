@@ -1,0 +1,142 @@
+<%-include("../includes/boilerplate.ejs")%>
+
+<body>
+  <div class="offset-3 col-6">
+    <div class="card show-card">
+      <h5 class="card-title"><%=room.title%></h5>
+      <img
+        class="card-img-top image"
+        src="<%=room.image.url%>"
+        alt="roomImage"
+      />
+      <div class="card-body">
+        <div class="card-text">
+          <p>
+            <b><i>Owned by <%=room.owner.username%></i></b>
+          </p>
+          <p><%=room.description%></p>
+          <p>&#8377; <%=room.price%>/nignt</p>
+          <p><%=room.location%></p>
+          <p><%=room.country%></p>
+        </div>
+        <%if(currUser && room.owner.equals(currUser._id)){%>
+        <div class="btn-primary">
+          <a href="/rooms/<%=room._id%>/edit">Edit</a>
+          <form
+            method="post"
+            action="/rooms/<%=room._id%>/delete?_method=DELETE"
+          >
+            <button class="mt-1">Delete</button>
+          </form>
+        </div>
+        <%}%>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6 offset-3">
+    <%if(currUser){%>
+    <hr />
+    <h3>Place your Reviews</h3>
+
+    <form
+      method="post"
+      action="/rooms/<%=room._id%>/reviews"
+      novalidate
+      class="needs-validation"
+    >
+      <div>
+        <label for="rating" class="form-label">Rating</label>
+        <fieldset class="starability-slot">
+          <input
+            type="radio"
+            id="rating"
+            class="input-no-rate"
+            name="review[rating]"
+            value="1"
+            checked
+            aria-label="No rating."
+          />
+          <input
+            type="radio"
+            id="first-rate1"
+            name="review[rating]"
+            value="1"
+          />
+          <label for="first-rate1" title="Terrible">1 star</label>
+          <input
+            type="radio"
+            id="first-rate2"
+            name="review[rating]"
+            value="2"
+          />
+          <label for="first-rate2" title="Not good">2 stars</label>
+          <input
+            type="radio"
+            id="first-rate3"
+            name="review[rating]"
+            value="3"
+          />
+          <label for="first-rate3" title="Average">3 stars</label>
+          <input
+            type="radio"
+            id="first-rate4"
+            name="review[rating]"
+            value="4"
+          />
+          <label for="first-rate4" title="Very good">4 stars</label>
+          <input
+            type="radio"
+            id="first-rate5"
+            name="review[rating]"
+            value="5"
+          />
+          <label for="first-rate5" title="Amazing">5 stars</label>
+        </fieldset>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="comment">Comment</label>
+        <textarea
+          class="form-control"
+          name="review[comment]"
+          id="comment"
+          placeholder="enter review"
+          rows="5"
+          cols="10"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please enter review first</div>
+      </div>
+      <button class="btn btn-dark mb-4">Submit</button>
+    </form>
+    <%}%>
+  </div>
+
+  <div class="container-sm">
+    <div class="offset-3 col-6">
+      <%if(room.reviews.length>0){%>
+      <hr />
+      <h3>All Reviews</h3>
+      <%for(review of room.reviews){%>
+      <div class="card">
+        <div class="card-body">
+          <h5>@<%=review.author.username%></h5>
+          <p class="starability-result" data-rating="<%=review.rating%>"></p>
+          <p><%=review.comment%></p>
+        </div>
+        <%if(currUser){%>
+        <form
+          method="post"
+          action="/rooms/<%=room._id%>/reviews/<%=review._id%>?_method=DELETE"
+        >
+          <button class="ms-1">Delete</button>
+        </form>
+        <%}%>
+      </div>
+      <%}%> <%}%>
+    </div>
+  </div>
+
+  <script src="../../js/script.js"></script>
+</body>

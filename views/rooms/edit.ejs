@@ -1,0 +1,104 @@
+<%-include("../includes/boilerplate.ejs")%>
+
+<body>
+  <h3 class="offset-5"><u>Edit your Room</u></h3>
+  <div class="row offset-3 mt-4 form">
+    <div class="col col-8">
+      <form
+        class="needs-validation"
+        method="post"
+        action="/rooms/<%=room._id%>?_method=PATCH"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            class="form-control"
+            type="text"
+            id="title"
+            name="Room[title]"
+            value="<%=room.title%>"
+            required
+          />
+          <div class="valid-feedback">Title Looks good!</div>
+        </div>
+
+        <div class="form-group">
+          <label for="Description">Description</label>
+          <textarea
+            class="form-control"
+            rows="5"
+            cols="40"
+            name="Room[description]"
+            id="Description"
+            required
+          >
+<%=room.description%></textarea
+          >
+          <div class="invalid-feedback">
+            Please provide a valid description.
+          </div>
+        </div>
+
+        Original Room Image
+        <div>
+          <img src="<%=originalImageUrl%>" alt="img" class="img" />
+        </div>
+
+        <div class="form-group">
+          <label for="image">Upload New Image</label>
+          <input
+            class="form-control"
+            id="image"
+            name="Room[image]"
+            type="file"
+          />
+        </div>
+
+        <div class="row">
+          <div class="form-group col-sm-4">
+            <label for="price">Price</label>
+            <input
+              class="form-control"
+              id="price"
+              name="Room[price]"
+              type="number"
+              value="<%=room.price%>"
+              required
+            />
+            <div class="invalid-feedback">Please enter price.</div>
+          </div>
+
+          <div class="form-group location">
+            <label for="location">Location</label>
+            <input
+              class="form-control"
+              id="location"
+              name="Room[location]"
+              value="<%=room.location%>"
+              type="text"
+              required
+            />
+            <div class="invalid-feedback">Please provide a valid city.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input
+            class="form-control"
+            id="country"
+            name="Room[country]"
+            value="<%=room.country%>"
+            type="text"
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid state.</div>
+        </div>
+        <button class="mt-2 offset-5 active">Edit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../js/script.js"></script>
+</body>
