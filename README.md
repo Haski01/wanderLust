@@ -100,7 +100,7 @@ Role-based permissions
 Coming soon...
 
 🧑‍💻 Author
-Developed by Your Name
+Developed by Your Asad
 
 🌐 Wonderlust is a learning project and not affiliated with Airbnb.
 
@@ -109,29 +109,3 @@ Copy
 Edit
 
 ---
-
-Let me know if you'd like this tailored with your name, GitHub link, or if you want to include screenshots or deployment instructions (e.g., hosted on Render, Vercel, etc.).
-
-
-
-
-
-
-Do you like this personality
-
-
-
-
-Ask
-
-Search
-
-Make Image
-
-Research
-
-Add a section for deployment instructions (e.g., Render, Heroku, etc.)
-
-Mention if there are any mobile responsiveness considerations.
-
-Clarify how error handling is logged or monitored in the app.
