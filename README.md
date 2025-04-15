@@ -42,38 +42,26 @@ Built using the **MERN stack**, Wonderlust integrates various features including
 "passport": "^0.7.0",
 "passport-local": "^1.0.0",
 "passport-local-mongoose": "^8.0.0"
+
+---
+
 ⚙️ Setup Instructions
 Clone the repository
 
-bash
-Copy
-Edit
 git clone https://github.com/yourusername/wonderlust.git
+
 cd wonderlust
+
+---
+
 Install dependencies
 
-bash
-Copy
-Edit
 npm install
-Environment Variables
 
-Create a .env file in the root directory and add:
-
-bash
-Copy
-Edit
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_KEY=your_api_key
-CLOUDINARY_SECRET=your_api_secret
-DB_URL=your_mongodb_connection_string
-SECRET=your_session_secret
 Run the app
 
-bash
-Copy
-Edit
-npm start
+node app.js
+
 The app will run on http://localhost:3000
 
 🛡️ Error Handling
