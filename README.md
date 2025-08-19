@@ -42,58 +42,38 @@ Built using the **MERN stack**, Wonderlust integrates various features including
 "passport": "^0.7.0",
 "passport-local": "^1.0.0",
 "passport-local-mongoose": "^8.0.0"
-
+```
 ---
 
 ⚙️ Setup Instructions
-Clone the repository
+--
 
-git clone https://github.com/yourusername/wonderlust.git
-
+1. Clone the repository
+--
 cd wonderlust
 
 ---
 
-Install dependencies
-
+2. Install dependencies
+--
 npm install
+---
 
-Run the app
-
+3. Run the app
+--
 node app.js
 
-The app will run on http://localhost:3000
+---
 
-🛡️ Error Handling
-Wonderlust implements robust error handling throughout the app:
 
-Custom error classes with status codes
+### 🛡️ Error Handling
 
-Try-catch wrappers in async routes
+- Wonderlust implements robust error handling throughout the app:
+- Custom error classes with status codes
+- Try-catch wrappers in async routes
+- User-friendly error pages (404, 500, etc.)
+- Flash messaging for feedback
 
-User-friendly error pages (404, 500, etc.)
-
-Flash messaging for feedback
-
-✨ Future Improvements
-Search and filter system
-
-Map integration with Google Maps or Mapbox
-
-Reviews and ratings
-
-Role-based permissions
-
-📸 Screenshots
+### 📸 Screenshots
 Coming soon...
-
-🧑‍💻 Author
-Developed by Your Asad
-
-🌐 Wonderlust is a learning project and not affiliated with Airbnb.
-
-yaml
-Copy
-Edit
-
 ---
